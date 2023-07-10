@@ -5,13 +5,13 @@
     "jasonxu.jszip.loadZipFile": "load [TYPE] file and save as [NAME]",
     "jasonxu.jszip.error":"error",
     "jasonxu.jszip.getFileList":"list files in archive [NAME]",
-    "jasonxu.jszip.getTXTfile":"get text file [FILENAME] in archive [NAME]",
-    "jasonxu.jszip.getB64file":"get base64 of file [FILENAME] in archive [NAME]",
+    "jasonxu.jszip.getfile":"get [AS] file [FILENAME] in archive [NAME]",
     "jasonxu.jszip.deleteZipFile":"delete ZIP file [NAME]",
     "jasonxu.jszip.deleteAll":"delete all of ZIP files",
-    "jasonxu.jszip.addFile":"add text file [FNAME] [CONTENT] at [NAME]",
+    "jasonxu.jszip.addFile":"add [AS] file [FNAME] [CONTENT] at [NAME]",
     "jasonxu.jszip.addFolder":"add folder [FNAME] at [NAME]",
     "jasonxu.jszip.downloadZip":"save and downlaod [NAME] as [FNAME] level [LEVEL]",
     "jasonxu.jszip.newZipFile":"create new zip file at [NAME]",
-    "jasonxu.jszip.addB64File":"add base64 file [FNAME] [CONTENT] at [NAME]"
+    "jasonxu.jszip.as.string":"text",
+    "jasonxu.jszip.as.base64":"base64"
 }

@@ -38,14 +38,14 @@ class JZExtension extends Extension {
         });
 
         api.addBlock({
-            opcode: 'jasonxu.jszip.getTXTfile.opcode',
+            opcode: 'jasonxu.jszip.getfile.opcode',
             type: type.BlockType.REPORTER,
-            messageId: 'jasonxu.jszip.getTXTfile',
+            messageId: 'jasonxu.jszip.getfile',
             categoryId: 'jasonxu.jszip.jszip',
             function: (args, util) => {
                 error = "";
                 try {
-                    return zipsaver[args.NAME].files[args.FILENAME].async('string');
+                    return zipsaver[args.NAME].files[args.FILENAME].async(args.AS);
                 } catch (err) {
                     error = err;
                     return "ERR";
@@ -56,31 +56,17 @@ class JZExtension extends Extension {
                     default: 'MyZipFile'
                 }, FILENAME: {
                     type: type.ParameterType.STRING,
-                    default: '1.txt'
-                }
-            }
-        });
-
-        api.addBlock({
-            opcode: 'jasonxu.jszip.getB64file.opcode',
-            type: type.BlockType.REPORTER,
-            messageId: 'jasonxu.jszip.getB64file',
-            categoryId: 'jasonxu.jszip.jszip',
-            function: (args, util) => {
-                error = "";
-                try {
-                    return zipsaver[args.NAME].files[args.FILENAME].async('base64');
-                } catch (err) {
-                    error = err;
-                    return "ERR";
-                }
-            }, param: {
-                NAME: {
+                    default: 'abc.svg'
+                }, AS: {
                     type: type.ParameterType.STRING,
-                    default: 'MyZipFile'
-                }, FILENAME: {
-                    type: type.ParameterType.STRING,
-                    default: '1.txt'
+                    menu: [{
+                        messageId: 'jasonxu.jszip.as.string',
+                        value: 'string'
+                    }, {
+                        messageId: 'jasonxu.jszip.as.base64',
+                        value: 'base64'
+                    }],
+                    default: 'string'
                 }
             }
         });
@@ -170,7 +156,8 @@ class JZExtension extends Extension {
             categoryId: 'jasonxu.jszip.jszip',
             function: async (args, util) => {
                 try {
-                    zipsaver[args.NAME].file(args.FNAME, args.CONTENT);
+                    if(args.AS=='base64') zipsaver[args.NAME].file(args.FNAME, args.CONTENT, { base64: true });
+                    else zipsaver[args.NAME].file(args.FNAME, args.CONTENT);
                 } catch (err) {
                     error = err;
                     console.log(err);
@@ -185,32 +172,16 @@ class JZExtension extends Extension {
                 }, CONTENT: {
                     type: type.ParameterType.STRING,
                     default: 'hello!'
-                }
-            }
-        });
-
-        api.addBlock({
-            opcode: 'jasonxu.jszip.addB64File.opcode',
-            type: type.BlockType.COMMAND,
-            messageId: 'jasonxu.jszip.addB64File',
-            categoryId: 'jasonxu.jszip.jszip',
-            function: async (args, util) => {
-                try {
-                    zipsaver[args.NAME].file(args.FNAME, args.CONTENT, { base64: true });
-                } catch (err) {
-                    error = err;
-                    console.log(err);
-                }
-            }, param: {
-                NAME: {
+                }, AS: {
                     type: type.ParameterType.STRING,
-                    default: 'MyZipFile'
-                }, FNAME: {
-                    type: type.ParameterType.STRING,
-                    default: 'hello.png'
-                }, CONTENT: {
-                    type: type.ParameterType.STRING,
-                    default: 'data'
+                    menu: [{
+                        messageId: 'jasonxu.jszip.as.string',
+                        value: 'string'
+                    }, {
+                        messageId: 'jasonxu.jszip.as.base64',
+                        value: 'base64'
+                    }],
+                    default: 'string'
                 }
             }
         });
