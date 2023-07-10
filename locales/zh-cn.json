@@ -1,0 +1,17 @@
+{
+    "jasonxu.jszip.name": "JSZip",
+    "jasonxu.jszip.description": "爆炸",
+    "jasonxu.jszip.jszip.messageid": "JSZip",
+    "jasonxu.jszip.loadZipFile": "加载 [TYPE] 文件并存储于容器 [NAME] 中",
+    "jasonxu.jszip.error":"错误",
+    "jasonxu.jszip.getFileList":"列出容器 [NAME] 中所有的文件",
+    "jasonxu.jszip.getTXTfile":"获取容器 [NAME] 中文本文件 [FILENAME] 的内容",
+    "jasonxu.jszip.getB64file":"获取容器 [NAME] 中文件 [FILENAME] 的Base64",
+    "jasonxu.jszip.deleteZipFile":"删除容器 [NAME]",
+    "jasonxu.jszip.deleteAll":"清空所有容器",
+    "jasonxu.jszip.addFile":"在容器 [NAME] 中新建文本文件 [FNAME] [CONTENT]",
+    "jasonxu.jszip.addFolder":"在容器 [NAME] 中新建文件夹 [FNAME]",
+    "jasonxu.jszip.downloadZip":"保存并下载 [NAME] 文件名 [FNAME] 压缩率 [LEVEL]",
+    "jasonxu.jszip.newZipFile":"在容器 [NAME] 中新建压缩文件",
+    "jasonxu.jszip.addB64File":"在容器 [NAME] 中新建base64文件 [FNAME] [CONTENT]"
+}

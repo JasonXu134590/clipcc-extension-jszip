@@ -1,0 +1,21 @@
+{
+    "name": "clipcc-extension-jasonxu-jszip",
+    "version": "0.1.0",
+    "author": "JasonXu",
+    "scripts": {
+        "build": "rimraf ./build && mkdirp build && rimraf ./dist && mkdirp dist && webpack --bail",
+        "build:dist": "NODE_ENV=production yarn run build"
+    },
+    "dependencies": {
+        "clipcc-extension": "^0.1.7",
+        "jszip": "^3.10.1"
+    },
+    "devDependencies": {
+        "copy-webpack-plugin": "^10.2.4",
+        "mkdirp": "^1.0.4",
+        "rimraf": "^3.0.2",
+        "webpack": "^5.68.0",
+        "webpack-cli": "^4.9.2",
+        "zip-webpack-plugin": "^4.0.1"
+    }
+}
